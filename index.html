@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Tragwerk</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#1f2a37">
+<meta name="robots" content="noindex,nofollow">
+<link rel="manifest" href="manifest.webmanifest?v=1">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="top">
+    <b class="brand">Tragwerk</b>
+    <nav id="tabs">
+      <button class="tab on" data-view="edit">System</button>
+      <button class="tab" data-view="steps">Rechenweg</button>
+      <button class="tab" data-view="lib">Bibliothek</button>
+      <button class="tab" data-view="stab">Stabilität</button>
+      <button class="tab" data-view="tbl">Tabellen</button>
+      <button class="tab" data-view="info">Info</button>
+    </nav>
+    <span class="grow"></span>
+    <button id="btnFile" class="pill" title="Where your data is saved">Saved in this browser</button>
+  </header>
+  <main id="stage"></main>
+</div>
+
+<dialog id="dlgFile">
+  <h3>Where is your data saved?</h3>
+  <p id="fileInfo"></p>
+  <div class="row">
+    <button id="btnChoose" class="primary">Choose folder…</button>
+    <button id="btnReconnect">Reconnect</button>
+    <button id="btnBackup">Download backup</button>
+    <label class="btn">Restore backup… <input id="fileRestore" type="file" accept=".trw,application/json" hidden></label>
+    <button id="btnUnlink">Stop using folder</button>
+    <button id="btnCloseFile" value="close">Close</button>
+  </div>
+</dialog>
+<div id="toast" role="status"></div>
+
+<!-- load order matters: each file adds to window.APP -->
+<script src="js/util.js"></script>
+<script src="js/tables.js"></script>
+<script src="js/beam.js"></script>
+<script src="js/truss.js"></script>
+<script src="js/frame.js"></script>
+<script src="js/stability.js"></script>
+<script src="js/store.js"></script>
+<script src="js/svg.js"></script>
+<script src="js/beam_ui.js"></script>
+<script src="js/truss_ui.js"></script>
+<script src="js/frame_ui.js"></script>
+<script src="js/tables_ui.js"></script>
+<script src="js/stability_ui.js"></script>
+<script src="js/app.js"></script>
+<script src="js/init.js"></script>
+</body>
+</html>
