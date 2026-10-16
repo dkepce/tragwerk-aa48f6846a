@@ -1,7 +1,7 @@
 /* Tragwerk — colors are CSS variables so a theme switch is just a different set of values. */
 :root {
-  --bg: #f6f4ef; --panel: #ffffff; --ink: #222831; --muted: #6b7280; --line: #dcd8cd;
-  --accent: #1f2a37; --accent-ink: #ffffff; --warn: #b4531a; --ok: #2d7a4f;
+  --bg: #f5f6f7; --panel: #ffffff; --ink: #1d2a36; --muted: #5f6b76; --line: #d5dce2;
+  --accent: #006699; --accent-ink: #ffffff; --soft: #e3eef5; --warn: #b4531a; --ok: #2d7a4f;
   --radius: 10px; --shadow: 0 1px 3px rgba(0, 0, 0, .12);
   font-family: "Segoe UI", system-ui, sans-serif; font-size: 15px;
 }
@@ -9,12 +9,12 @@
 html, body { height: 100%; margin: 0; background: var(--bg); color: var(--ink); }
 #app { display: flex; flex-direction: column; height: 100%; }
 #top { display: flex; align-items: center; gap: 12px; padding: 8px 16px; background: var(--accent); color: var(--accent-ink); }
-#top .brand { font-size: 1.15rem; letter-spacing: .02em; }
+#top .brand { font-size: 1.15rem; letter-spacing: .04em; font-weight: 700; }
 #top .grow { flex: 1; }
 #tabs { display: flex; gap: 4px; }
 .tab { border: 0; background: transparent; color: inherit; padding: 6px 14px; border-radius: 999px; cursor: pointer; font: inherit; opacity: .8; }
 .tab:hover { opacity: 1; background: rgba(255, 255, 255, .15); }
-.tab.on { opacity: 1; background: rgba(255, 255, 255, .28); font-weight: 600; }
+.tab.on { opacity: 1; background: #fff; color: var(--accent); font-weight: 600; }
 .pill { border: 1px solid rgba(255, 255, 255, .5); background: transparent; color: inherit; padding: 4px 12px; border-radius: 999px; cursor: pointer; font: inherit; font-size: .85rem; }
 .pill.warn { background: #fff3cd; color: #7a4b00; border-color: #e0b84a; }
 .pill.err { background: #fde2e1; color: #8a1c17; border-color: #e08a86; }
@@ -33,7 +33,7 @@ dialog .row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
 /* ---------- Tragwerk ---------- */
 :root { --load: #d9480f; --react: #2b8a3e; --zug: #1c64c4; --druck: #c92a2a; --null: #868e96; --sel: #f59f00; }
 .muted { color: var(--muted); font-size: .9em; }
-h2, h3, h4 { margin: .2em 0 .5em; }
+h2, h3, h4 { margin: .2em 0 .5em; color: var(--accent); }
 .card h3 { font-size: 1rem; }
 .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .welcome { max-width: 640px; margin: 40px auto; }
@@ -94,7 +94,7 @@ svg text { stroke: none; font-family: inherit; }
 .edRight .card { padding: 10px 12px; margin-bottom: 10px; }
 .rowel { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; padding: 5px 6px; border-radius: 8px; border: 1px solid transparent; cursor: pointer; }
 .rowel:hover { background: rgba(0, 0, 0, .03); }
-.rowel.sel { background: #fff4d6; border-color: var(--sel); }
+.rowel.sel { background: var(--soft); border-color: var(--sel); }
 .rowel label { display: flex; align-items: center; gap: 4px; font-size: .85rem; color: var(--muted); }
 .rowel input[type=text] { width: 62px; padding: 3px 6px; }
 .rowel select { font: inherit; padding: 3px 6px; border: 1px solid var(--line); border-radius: 8px; background: var(--panel); color: var(--ink); max-width: 190px; }
@@ -114,7 +114,7 @@ svg text { stroke: none; font-family: inherit; }
 .step h3 { font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
 .step h4 { margin: 14px 0 4px; }
 .num { display: inline-grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-size: .85rem; }
-.eq { font-family: Consolas, "Cascadia Mono", monospace; background: #f3f1ea; border-radius: 8px; padding: 6px 10px; margin: 6px 0; overflow-x: auto; }
+.eq { font-family: Consolas, "Cascadia Mono", monospace; background: var(--soft); border-radius: 8px; padding: 6px 10px; margin: 6px 0; overflow-x: auto; }
 
 @media (max-width: 960px) { .edMain { grid-template-columns: 1fr; } .params { margin-left: 0; } }
 @media print { .tools, .hint, .edTop, #tabBox { display: none; } .edMain { display: block; } }
@@ -140,7 +140,7 @@ svg text { stroke: none; font-family: inherit; }
 .tbl.wide { white-space: nowrap; }
 .tbl.wide td, .tbl.wide th { padding: 3px 10px 3px 0; text-align: right; }
 .tbl.wide td:first-child, .tbl.wide th:first-child { text-align: left; }
-.tbl .hl { background: #fff4d6; }
+.tbl .hl { background: var(--soft); }
 .tbl tr.units td { color: var(--muted); font-size: .8rem; border-bottom: 2px solid var(--line); }
 .filters { margin: 10px 0 4px; gap: 6px 16px; }
 .filters label { display: flex; align-items: center; gap: 6px; }
